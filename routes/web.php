@@ -17,5 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
+
     Route::get('/','\App\Http\Controllers\Admin\MainController@index')->name('admin.index');
+
+    Route::resource('/categories','\App\Http\Controllers\Admin\CategoryController');
+
+    Route::resource('/tags','\App\Http\Controllers\Admin\TagController');
 });
