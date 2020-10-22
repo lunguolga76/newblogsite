@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Blank Page</title>
+    <title>Admin | Panel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,7 +75,7 @@
                             <img src="{{asset('assets/admin/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
-                                    John Pierce
+                                   Ilona Ilie
                                     <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                                 </h3>
                                 <p class="text-sm">I got your message bro</p>
@@ -159,7 +159,7 @@
                     <img src="{{asset('assets/admin/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="#" class="d-block">Ivanov Violeta</a>
                 </div>
             </div>
 
@@ -215,6 +215,29 @@
                                 <a href="{{ route('tags.create') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>New Tag</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p>
+                                Posts
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('posts.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Posts List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('posts.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>New Post</p>
                                 </a>
                             </li>
                         </ul>
