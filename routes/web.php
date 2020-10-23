@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'admin'],function(){
+Route::group(['prefix'=>'admin','namespace'=>'Admin', 'middleware'=>'admin'],function(){
 
     Route::get('/','\App\Http\Controllers\Admin\MainController@index')->name('admin.index');
 
