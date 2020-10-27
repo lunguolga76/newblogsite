@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -53,5 +54,9 @@ class Post extends Model
     public function getPostDate()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s',$this->created_at)->format('d F,Y');
+    }
+    public function scopeLike($query,$s){
+        return $query->where('title','LIKE',"%{$s}%");
+
     }
 }
