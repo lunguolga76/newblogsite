@@ -10,7 +10,6 @@ use Illuminate\Pagination\Paginator;
 class SearchController extends Controller
 {
     public function index(Request $request){
-        Paginator::useBootstrap();
         $request->validate([
             's'=>'required',
 

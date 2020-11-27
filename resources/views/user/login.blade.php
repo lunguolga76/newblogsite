@@ -22,6 +22,7 @@
 
     <div class="card">
         <div class="card-body register-card-body">
+            <div>Hello again!</div><br>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="list-unstyled">
@@ -67,6 +68,9 @@
                     <!-- /.col -->
                 </div>
             </form>
+                <a class="nav-link" href="{{route('register.create')}}"> Have account? Sign up</a>
+
+
 
         </div>
         <!-- /.form-box -->

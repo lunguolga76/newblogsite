@@ -54,3 +54,4 @@ mix.scripts([
 mix.copyDirectory('resources/assets/front/fonts', 'public/assets/front/fonts');
 mix.copyDirectory('resources/assets/front/images', 'public/assets/front/images');
 mix.copyDirectory('resources/assets/front/upload', 'public/assets/front/upload');
+

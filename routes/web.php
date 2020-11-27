@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 //Main Page
 Route::get('/','\App\Http\Controllers\PostController@index')->name('home');
+
+Route::match(['get','post'],'/send','\App\Http\Controllers\PostController@send');
 //Route for Single Post
 Route::get('/article/{slug}','\App\Http\Controllers\PostController@show')->name('posts.single');
 //Route for All Categories
@@ -22,6 +24,8 @@ Route::get('/article/category/{slug}','\App\Http\Controllers\CategoryController@
 Route::get('/article/tag/{slug}','\App\Http\Controllers\TagController@show')->name('tags.single');
 //Search Rout
 Route::get('/search','\App\Http\Controllers\SearchController@index')->name('search');
+
+Route::match(['get','post'],'/send','\App\Http\Controllers\ContactController@send');
 
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin', 'middleware'=>'admin'],function(){
@@ -33,6 +37,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin', 'middleware'=>'admin'],fun
     Route::resource('/tags','\App\Http\Controllers\Admin\TagController');
 
     Route::resource('/posts','\App\Http\Controllers\Admin\PostController');
+
+    Route::resource('/banners', '\App\Http\Controllers\Admin\BannerController');
 });
 
 Route::group(['middleware'=>'guest'], function(){

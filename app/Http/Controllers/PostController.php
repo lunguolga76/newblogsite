@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
+
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
     public function index(){
-        Paginator::useBootstrap();
+
 
         $posts=Post::with('category')->orderBy('id','desc')->paginate(2);
 
@@ -21,4 +24,5 @@ class PostController extends Controller
         $post->update();
         return view('posts.show', compact('post'));
     }
+
 }

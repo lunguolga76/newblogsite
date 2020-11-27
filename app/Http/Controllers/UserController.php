@@ -18,12 +18,19 @@ class UserController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required|confirmed',
+            'avatar'=>'nullable|image',
         ]);
         //dd($request->all());
+        if($request->hasFile('avatar')){
+            $folder=date('Y-m-d');
+            $avatar=$request->file('avatar')->store("images/{$folder}");
+        }
+
         $user=User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
+            'avatar'=>$avatar ?? null,
         ]);
         session()->flash('success','You have been registered');
             Auth::login($user);
@@ -60,6 +67,6 @@ class UserController extends Controller
     public function logout(){
 
         Auth::logout();
-        return redirect('login.create');
+        return redirect('/');
     }
 }

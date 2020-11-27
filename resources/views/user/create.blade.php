@@ -33,7 +33,7 @@
             @endif
 
 
-            <form action="{{route('register.store')}}" method="post">
+            <form action="{{route('register.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="text" name="name" class="form-control" placeholder="Name" value="{{old('name')}}">
@@ -67,6 +67,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="input-group mb-3">
+                    <label for="avatar">Avatar</label>
+                    <input type="file" name="avatar" id="avatar" class="form-control-file" placeholder="Add avatar">
+                </div>
                 <div class="row">
 
                     <!-- /.col -->
@@ -77,7 +81,7 @@
                 </div>
             </form>
 
-            <a href="#" class="text-center">I already have a membership</a>
+            <a href="{{route('login')}}" class="text-center">I already have a membership</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

@@ -27,7 +27,8 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" data-enable-remember="true" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu" data-enable-remember="true" href="#" role="button"><i
+                        class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="../../index3.html" class="nav-link">Home</a>
@@ -49,6 +50,7 @@
             </div>
         </form>
 
+
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
@@ -61,7 +63,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('assets/admin/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <img src="{{asset('assets/admin/img/user1-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -77,10 +80,11 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('assets/admin/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{asset('assets/admin/img/user8-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
-                                   Ilona Ilie
+                                    Ilona Ilie
                                     <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                                 </h3>
                                 <p class="text-sm">I got your message bro</p>
@@ -93,7 +97,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="{{asset('assets/admin/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{asset('assets/admin/img/user3-128x128.jpg')}}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -161,7 +166,8 @@
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset('assets/admin/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{asset('assets/admin/img/user2-160x160.jpg')}}" class="img-circle elevation-2"
+                         alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">Ivanov Violeta</a>
@@ -170,7 +176,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <li class="nav-item">
                         <a href="{{ route('admin.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-home"></i>
@@ -181,7 +188,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-archive"></i>
                             <p>
-                               Category
+                                Category
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -205,7 +212,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
-                               Tags
+                                Tags
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -247,7 +254,31 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-school"></i>
+                            <p>
+                                Banners
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('banners.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Banner List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('banners.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>New Banner</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
+
             </nav>
             <!-- /.sidebar-menu -->
         </div>
@@ -256,31 +287,31 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper mt-2">
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-              @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul class="list-unstyled">
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-                  @if (session()->has('error'))
-                      <div class="alert alert-danger">
-                          {{session('error')}}
-                      </div>
-                  @endif
-                  @if (session()->has('success'))
-                      <div class="alert alert-success">
-                         {{session('success')}}
-                      </div>
-                  @endif
-          </div>
-      </div>
-  </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="list-unstyled">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{session('error')}}
+                        </div>
+                    @endif
+                    @if (session()->has('success'))
+                        <div class="alert alert-success">
+                            {{session('success')}}
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
         @yield('content')
     </div>
 
@@ -306,8 +337,8 @@
     $('.nav-sidebar a').each(function () {
         //alert("test");
         let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
-        let link=this.href;
-        if(link == location){
+        let link = this.href;
+        if (link == location) {
             $(this).addClass('active');
             $(this).closest('.has-treeview').addClass('menu-open');
 
@@ -319,13 +350,13 @@
 <script src="{{asset('ckfinder/ckfinder.js')}}"></script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#content' ), {
+        .create(document.querySelector('#content'), {
             ckfinder: {
                 uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
             },
             image: {
                 // You need to configure the image toolbar, too, so it uses the new style buttons.
-                toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight' ],
+                toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
 
                 styles: [
                     // This option is equal to a situation where no style is applied.
@@ -378,19 +409,19 @@
             licenseKey: '',
 
 
-        } )
-        .catch( function( error ) {
-            console.error( error );
-        } );
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
 
 
     ClassicEditor
-        .create( document.querySelector( '#description' ), {
-            toolbar: ['heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
-        } )
-        .catch( function( error ) {
-            console.error( error );
-        } );
+        .create(document.querySelector('#description'), {
+            toolbar: ['heading', '|', 'bold', 'italic', '|', 'undo', 'redo']
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
     $(document).ready(function () {
         bsCustomFileInput.init();
     });

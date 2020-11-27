@@ -9,9 +9,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
+    use HasFactory;
     use Sluggable;
     protected $fillable=['title','description','content','category_id','thumbnail'];
 
@@ -58,5 +60,12 @@ class Post extends Model
     public function scopeLike($query,$s){
         return $query->where('title','LIKE',"%{$s}%");
 
-    }
+  }
+//public function getTitleAttribute($value){
+    //   $this->attributes['title']=Str::title($value);
+  //}
+
+  /* public function setTitleAttribute($value){
+        return Str::upper($value);
+   }*/
 }
